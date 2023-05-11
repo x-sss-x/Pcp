@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id            String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name          String
+  email         String
+  password      String
+  contactNumber Int
+  bio           String
+  address       String
+  posts         post[]
+  comments      comment[]
+  likedPosts    post[]     @relation(name: "upload posts")
+  viewedBy      company    @relation(fields: [viewedById], references: [id])
+  viewedById    String     @db.Uuid
+  job           jobOffer[]
+}
+
+model post {
+  id        String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title     String
+  content   String
+  createdAt DateTime     @default(dbgenerated("now()"))
+  author    user         @relation(fields: [authorId], references: [id])
+  authorId  String       @db.Uuid
+  comment   comment[]
+  likedBy   user[]       @relation(name: "upload posts")
+  LikedBy   company      @relation(fields: [ngoId], references: [id])
+  ngoId     String       @db.Uuid
+  saved     savedPosts[]
+}
+
+model savedPosts {
+  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  posts   post   @relation(fields: [postsId], references: [id])
+  postsId String @db.Uuid
+}
+
+model comment {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  comments  String
+  createdAt DateTime @default(dbgenerated("now()"))
+  creator   user     @relation(fields: [creatorId], references: [id])
+  creatorId String   @db.Uuid
+  posts     post     @relation(fields: [postsId], references: [id])
+  postsId   String   @db.Uuid
+  ngo       company  @relation(fields: [ngoId], references: [id])
+  ngoId     String   @db.Uuid
+}
+
+model company {
+  id            String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name          String
+  email         String
+  password      String
+  contactNumber Int
+  bio           String
+  address       String
+  comments      comment[]
+  users         user[]
+  LikedPost     post[]
+  job           jobOffer[]
+}
+
+model jobOffer {
+  id             String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  profession     String
+  skills         String
+  transportation String
+  time           String
+  location       String
+  salary         Int
+  description    String
+  ngo            company @relation(fields: [ngoId], references: [id])
+  ngoId          String  @db.Uuid
+  savedBy        user    @relation(fields: [usersId], references: [id])
+  usersId        String  @db.Uuid
+}
