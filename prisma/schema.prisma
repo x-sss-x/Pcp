@@ -10,79 +10,117 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model user {
-  id            String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name          String
-  email         String
-  password      String
-  contactNumber Int
-  bio           String
-  address       String
-  posts         post[]
-  comments      comment[]
-  likedPosts    post[]     @relation(name: "upload posts")
-  viewedBy      company    @relation(fields: [viewedById], references: [id])
-  viewedById    String     @db.Uuid
-  job           jobOffer[]
+model users {
+  id         String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  username   String
+  fullname   String
+  email      String
+  password   String       @db.Text
+  phone_no   String       @db.Char(15)
+  bio        String       @db.Char(160)
+  address    String       @db.Text
+  posts      posts[]
+  comments   comments[]
+  savedPosts savedPosts[]
+  createdAt  DateTime     @default(dbgenerated("now()")) @db.Timestamptz()
 }
 
-model post {
-  id        String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  title     String
-  content   String
-  createdAt DateTime     @default(dbgenerated("now()"))
-  author    user         @relation(fields: [authorId], references: [id])
-  authorId  String       @db.Uuid
-  comment   comment[]
-  likedBy   user[]       @relation(name: "upload posts")
-  LikedBy   company      @relation(fields: [ngoId], references: [id])
-  ngoId     String       @db.Uuid
-  saved     savedPosts[]
+model posts {
+  id          String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String       @db.Text
+  description String       @db.Text
+  user        users?       @relation(fields: [userId], references: [id])
+  userId      String?      @db.Uuid
+  media_url   String       @db.Text
+  comments    comments[]
+  savedPosts  savedPosts[]
+  createdAt   DateTime     @default(dbgenerated("now()")) @db.Timestamptz()
+}
+
+model comments {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  content   String   @db.Text
+  post      posts    @relation(fields: [postId], references: [id])
+  postId    String   @db.Uuid
+  user      users    @relation(fields: [userId], references: [id])
+  userId    String   @db.Uuid
+  createdAt DateTime @default(dbgenerated("now()")) @db.Timestamptz()
 }
 
 model savedPosts {
-  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  posts   post   @relation(fields: [postsId], references: [id])
-  postsId String @db.Uuid
-}
-
-model comment {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  comments  String
-  createdAt DateTime @default(dbgenerated("now()"))
-  creator   user     @relation(fields: [creatorId], references: [id])
-  creatorId String   @db.Uuid
-  posts     post     @relation(fields: [postsId], references: [id])
-  postsId   String   @db.Uuid
-  ngo       company  @relation(fields: [ngoId], references: [id])
-  ngoId     String   @db.Uuid
+  users     users?   @relation(fields: [usersId], references: [id])
+  usersId   String?  @db.Uuid
+  posts     posts?   @relation(fields: [postsId], references: [id])
+  postsId   String?  @db.Uuid
+  createdAt DateTime @default(dbgenerated("now()")) @db.Timestamptz()
 }
 
-model company {
-  id            String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name          String
-  email         String
-  password      String
-  contactNumber Int
-  bio           String
-  address       String
-  comments      comment[]
-  users         user[]
-  LikedPost     post[]
-  job           jobOffer[]
-}
 
-model jobOffer {
-  id             String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  profession     String
-  skills         String
-  transportation String
-  time           String
-  location       String
-  salary         Int
-  description    String
-  ngo            company @relation(fields: [ngoId], references: [id])
-  ngoId          String  @db.Uuid
-  savedBy        user    @relation(fields: [usersId], references: [id])
-  usersId        String  @db.Uuid
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// model savedPosts {
+//   id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   posts   post   @relation(fields: [postsId], references: [id])
+//   postsId String @db.Uuid
+// }
+
+// model comment {
+//   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   comments  String
+//   createdAt DateTime @default(dbgenerated("now()"))
+//   creator   user     @relation(fields: [creatorId], references: [id])
+//   creatorId String   @db.Uuid
+//   posts     post     @relation(fields: [postsId], references: [id])
+//   postsId   String   @db.Uuid
+//   ngo       company  @relation(fields: [ngoId], references: [id])
+//   ngoId     String   @db.Uuid
+// }
+
+// model company {
+//   id            String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   name          String
+//   email         String
+//   password      String
+//   contactNumber Int
+//   bio           String
+//   address       String
+//   comments      comment[]
+//   users         user[]
+//   LikedPost     post[]
+//   job           jobOffer[]
+// }
+
+// model jobOffer {
+//   id             String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   profession     String
+//   skills         String
+//   transportation String
+//   time           String
+//   location       String
+//   salary         Int
+//   description    String
+//   ngo            company @relation(fields: [ngoId], references: [id])
+//   ngoId          String  @db.Uuid
+//   savedBy        user    @relation(fields: [usersId], references: [id])
+//   usersId        String  @db.Uuid
+// }
