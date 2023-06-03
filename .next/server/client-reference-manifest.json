@@ -230,9 +230,9 @@
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/client/image.js": {
+    "(app-client)/./components/forms/LoginForm.tsx": {
       "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
+        "id": "(sc_client)/./components/forms/LoginForm.tsx",
         "name": "*",
         "chunks": [
           "app/page:static/chunks/app/page.js"
@@ -240,25 +240,25 @@
         "async": false
       },
       "": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
+        "id": "(sc_client)/./components/forms/LoginForm.tsx",
         "name": "",
         "chunks": [
           "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
-        "name": "default",
+      "LoginForm": {
+        "id": "(sc_client)/./components/forms/LoginForm.tsx",
+        "name": "LoginForm",
         "chunks": [
           "app/page:static/chunks/app/page.js"
         ],
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
+    "(app-client)/./components/ui/label.tsx": {
       "*": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "id": "(sc_client)/./components/ui/label.tsx",
         "name": "*",
         "chunks": [
           "app/page:static/chunks/app/page.js"
@@ -266,26 +266,44 @@
         "async": false
       },
       "": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "id": "(sc_client)/./components/ui/label.tsx",
         "name": "",
         "chunks": [
           "app/page:static/chunks/app/page.js"
         ],
         "async": false
       },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "default",
+      "Label": {
+        "id": "(sc_client)/./components/ui/label.tsx",
+        "name": "Label",
         "chunks": [
           "app/page:static/chunks/app/page.js"
         ],
         "async": false
-      },
-      "defaultHead": {
-        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
-        "name": "defaultHead",
+      }
+    },
+    "(app-client)/./src/app/providers.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "*",
         "chunks": [
-          "app/page:static/chunks/app/page.js"
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "default",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
         ],
         "async": false
       }
@@ -970,113 +988,49 @@
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\image.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx": {
+      "id": "(app-client)/./components/forms/LoginForm.tsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\image.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx#": {
+      "id": "(app-client)/./components/forms/LoginForm.tsx",
+      "name": "",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx#LoginForm": {
+      "id": "(app-client)/./components/forms/LoginForm.tsx",
+      "name": "LoginForm",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx": {
+      "id": "(app-client)/./components/ui/label.tsx",
       "name": "*",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\image.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx#": {
+      "id": "(app-client)/./components/ui/label.tsx",
       "name": "",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\image.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\image.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\image.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/image.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\head.js": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\head.js": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\head.js#": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\head.js#": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\head.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\head.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\head.js#defaultHead": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "defaultHead",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\head.js#defaultHead": {
-      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
-      "name": "defaultHead",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx#Label": {
+      "id": "(app-client)/./components/ui/label.tsx",
+      "name": "Label",
       "chunks": [
         "app/page:static/chunks/app/page.js"
       ],
@@ -1089,12 +1043,36 @@
         "static/css/app/layout.css"
       ]
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Source_Sans_Pro\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":\"400\"}],\"variableName\":\"inter\"}#": {
       "id": "null",
       "name": "default",
       "chunks": [
         "static/css/app/layout.css"
       ]
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#default": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "default",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
     }
   }
 }
