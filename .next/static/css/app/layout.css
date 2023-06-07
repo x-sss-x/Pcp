@@ -1,3 +1,16 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[2].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[2].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: '__Inter_Fallback_f6fa1f';
+  src: local("Arial");
+  ascent-override:90.20%;
+  descent-override:22.48%;
+  line-gap-override:0.00%;
+  size-adjust:107.40%;
+}@font-face {font-family: '__Inter_Fallback_Fallback_f6fa1f';src: local("Arial");ascent-override: 90.20%;descent-override: 22.48%;line-gap-override: 0.00%;size-adjust: 107.40%
+}.__className_f6fa1f {font-family: '__Inter_Fallback_f6fa1f', '__Inter_Fallback_Fallback_f6fa1f';font-style: normal
+}
 /*!***************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[2].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[2].oneOf[12].use[3]!./src/app/globals.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************/
@@ -1053,17 +1066,4 @@ video {
   .data-\[state\=open\]\:sm\:slide-in-from-bottom-0[data-state=open] {
     --tw-enter-translate-y: 0px;
   }
-}
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[2].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[2].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-@font-face {
-  font-family: '__Inter_Fallback_f6fa1f';
-  src: local("Arial");
-  ascent-override:90.20%;
-  descent-override:22.48%;
-  line-gap-override:0.00%;
-  size-adjust:107.40%;
-}@font-face {font-family: '__Inter_Fallback_Fallback_f6fa1f';src: local("Arial");ascent-override: 90.20%;descent-override: 22.48%;line-gap-override: 0.00%;size-adjust: 107.40%
-}.__className_f6fa1f {font-family: '__Inter_Fallback_f6fa1f', '__Inter_Fallback_Fallback_f6fa1f';font-style: normal
 }

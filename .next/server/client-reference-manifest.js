@@ -230,6 +230,32 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
+    "(app-client)/./src/app/providers.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "*",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "default",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      }
+    },
     "(app-client)/./components/forms/LoginForm.tsx": {
       "*": {
         "id": "(sc_client)/./components/forms/LoginForm.tsx",
@@ -278,32 +304,6 @@ self.__RSC_MANIFEST={
         "name": "Label",
         "chunks": [
           "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/app/providers.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/providers.tsx",
-        "name": "*",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/app/providers.tsx",
-        "name": "",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/app/providers.tsx",
-        "name": "default",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
         ],
         "async": false
       }
@@ -988,6 +988,44 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\globals.css#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#default": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "default",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
     "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx": {
       "id": "(app-client)/./components/forms/LoginForm.tsx",
       "name": "*",
@@ -1033,44 +1071,6 @@ self.__RSC_MANIFEST={
       "name": "Label",
       "chunks": [
         "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\globals.css#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx": {
-      "id": "(app-client)/./src/app/providers.tsx",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#": {
-      "id": "(app-client)/./src/app/providers.tsx",
-      "name": "",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#default": {
-      "id": "(app-client)/./src/app/providers.tsx",
-      "name": "default",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     }
