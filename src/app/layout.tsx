@@ -1,23 +1,26 @@
 import "./globals.css";
-import { Inter, Source_Sans_Pro} from "next/font/google";
+import { Inter } from "next/font/google";
 import Providers from "./providers";
+import Header from "@/components/sub-components/Header";
 
-const inter = Source_Sans_Pro({ subsets: ["latin"],weight:"400"});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Handic App",
   description: "",
 };
 
-export default function RootLayout({
-  children,
-}: {
+export default function RootLayout(props: {
   children: React.ReactNode;
+  authModal: React.ReactNode;
 }) {
+  console.log(props)
   return (
     <html lang="en">
-      <body className={"h-[100vh] w-[100vw]"} style={inter.style}>
-        <Providers>{children}</Providers>
+      <body className={"h-screen w-screen"} style={inter.style}>
+        <Providers>
+          {props.children}
+        </Providers>
       </body>
     </html>
   );

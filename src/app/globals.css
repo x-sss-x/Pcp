@@ -20,7 +20,7 @@
     --input: 214.3 31.8% 91.4%;
  
     --primary: 195 100% 63%;
-    --primary-foreground: 195 100% 63%;
+    --primary-foreground: 0 0% 0%;
  
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -53,7 +53,7 @@
     --input: 216 34% 17%;
  
     --primary: rgb(67,208,255);
-    --primary-foreground: rgba(67,208,255,.8);
+    --primary-foreground: rgba(32, 146, 184, 0.8);
  
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
@@ -76,5 +76,6 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     height: 100vh;
     width:100vw;
+    overflow: hidden;
   }
 }
