@@ -10,7 +10,6 @@ export const metadata = {
 
 export default function RootLayout(props: {
   children: React.ReactNode;
-  authModal: React.ReactNode;
 }) {
   console.log(props);
   return (

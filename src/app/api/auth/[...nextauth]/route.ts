@@ -5,7 +5,6 @@ import { PrismaClient } from "@prisma/client";
 import Credentials from "next-auth/providers/credentials";
 import { compare } from "bcrypt";
 
-
 const prisma = new PrismaClient();
 
 export const NextAuthOptions: AuthOptions = {
@@ -17,54 +16,70 @@ export const NextAuthOptions: AuthOptions = {
       clientSecret: "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",
     }),
     Credentials({
-      credentials:{
-        email:{
-          label:"email",
-          type:"email"
+      credentials: {
+        userId: {
+          label: "username or email",
+          type: "email",
         },
-        password:{
-          label:"password",
-          type:"password"
-        }
+        password: {
+          label: "password",
+          type: "password",
+        },
       },
-      authorize:async (credentials,req)=>{
-        console.log(credentials)
+      authorize: async (credentials, req) => {
+        console.log(credentials);
 
-        //if email or password is not present 
-        if(!credentials?.email || !credentials.password) return null
+        //if email or password is not present
+        if (!credentials?.userId || !credentials.password) return null;
 
-        const user = await prisma.user.findUnique({
-          where:{
-            email:credentials.email
-          }
-        })
-        
+        const user = await prisma.user.findMany({
+          where: {
+            OR: [
+              {
+                email: credentials.userId,
+              },
+              {
+                username: credentials.userId,
+              },
+            ],
+          },
+          select: {
+            email: true,
+            password: true,
+            id: true,
+          },
+        });
+        console.log();
+
         //if user is not found in the database
-        if(!user || !user.password) return null
+        if (!user || !user[0].password) return null;
 
         //decrypt password
-        const isValidPassword = await compare(credentials.password,user.password);
-        
-        //if is not valid password
-        if(!isValidPassword) return null
+        const isValidPassword = await compare(
+          credentials.password,
+          user[0].password
+        );
 
-        return {
-          id:user.id,
-          email:user.email,
-          image:user.image,
-          name:user.name,
-          username:user.username
-        };
-      }
-    })
+        //if is not valid password
+        if (!isValidPassword) return null;
+
+        return user[0];
+      },
+    }),
   ],
   pages: {
-    // signIn: "/sign-in",
+    signIn: "/sign-in",
     // signOut: "/sign-out",
     // error: '/error', // Error code passed in query string as ?error=
     verifyRequest: "/verify-request", // (used for check email message)
     // newUser: "/sign-up", // New users will be directed here on first sign in (leave the property out if not of interest)
-  }
+  },
+  callbacks: {
+    // signIn(params) {
+    //   if (params.user.id) return "/";
+    //   else return "/sign-in";
+    // }
+  },
 };
 
 const handler = NextAuth(NextAuthOptions);
