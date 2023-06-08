@@ -9,6 +9,9 @@ self.__RSC_CSS_MANIFEST={
     ],
     "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\[id]\\layout.tsx": [
       "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\(dashboard)\\\\[id]\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
+    ],
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(auth)\\layout.tsx": [
+      "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\(auth)\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
     ]
   },
   "cssModules": {

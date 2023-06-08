@@ -26,44 +26,30 @@ export const NextAuthOptions: AuthOptions = {
           type: "password",
         },
       },
+      type: "credentials",
       authorize: async (credentials, req) => {
-        console.log(credentials);
-
         //if email or password is not present
         if (!credentials?.userId || !credentials.password) return null;
 
-        const user = await prisma.user.findMany({
+        const user = await prisma.user.findUnique({
           where: {
-            OR: [
-              {
-                email: credentials.userId,
-              },
-              {
-                username: credentials.userId,
-              },
-            ],
-          },
-          select: {
-            email: true,
-            password: true,
-            id: true,
+            email: credentials.userId,
           },
         });
-        console.log();
 
         //if user is not found in the database
-        if (!user || !user[0].password) return null;
+        if (!user || !user.password) return null;
 
         //decrypt password
         const isValidPassword = await compare(
           credentials.password,
-          user[0].password
+          user.password
         );
 
         //if is not valid password
         if (!isValidPassword) return null;
 
-        return user[0];
+        return user;
       },
     }),
   ],
@@ -78,8 +64,19 @@ export const NextAuthOptions: AuthOptions = {
     // signIn(params) {
     //   if (params.user.id) return "/";
     //   else return "/sign-in";
-    // }
+    // // },
+    async jwt({ token, trigger, account, user }) {
+      console.log("JWT CALLBACK",token)
+      return token;
+    },
+    async session({session,user,newSession}) {
+      console.log("SESSION CALLBACK",session,newSession)
+      return session;
+    },
   },
+  session:{
+    strategy:"jwt"
+  }
 };
 
 const handler = NextAuth(NextAuthOptions);

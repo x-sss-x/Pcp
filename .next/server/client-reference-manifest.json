@@ -230,58 +230,6 @@
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/client/link.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "*",
-        "chunks": [
-          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "",
-        "chunks": [
-          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "default",
-        "chunks": [
-          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/app/providers.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/providers.tsx",
-        "name": "*",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/app/providers.tsx",
-        "name": "",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/app/providers.tsx",
-        "name": "default",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./components/sub-components/Header.tsx": {
       "*": {
         "id": "(sc_client)/./components/sub-components/Header.tsx",
@@ -410,6 +358,66 @@
         "async": false
       }
     },
+    "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+        "name": "*",
+        "chunks": [
+          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+        "name": "",
+        "chunks": [
+          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        ],
+        "async": false
+      },
+      "suspense": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+        "name": "suspense",
+        "chunks": [
+          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        ],
+        "async": false
+      },
+      "NoSSR": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+        "name": "NoSSR",
+        "chunks": [
+          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/providers.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "*",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/app/providers.tsx",
+        "name": "default",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      }
+    },
     "(app-client)/./src/app/(dashboard)/[id]/page.tsx": {
       "*": {
         "id": "(sc_client)/./src/app/(dashboard)/[id]/page.tsx",
@@ -432,6 +440,58 @@
         "name": "default",
         "chunks": [
           "app/(dashboard)/[id]/page:static/chunks/app/(dashboard)/[id]/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./components/forms/LoginForm.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/forms/LoginForm.tsx",
+        "name": "*",
+        "chunks": [
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/forms/LoginForm.tsx",
+        "name": "",
+        "chunks": [
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        ],
+        "async": false
+      },
+      "LoginForm": {
+        "id": "(sc_client)/./components/forms/LoginForm.tsx",
+        "name": "LoginForm",
+        "chunks": [
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./components/ui/label.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/ui/label.tsx",
+        "name": "*",
+        "chunks": [
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/ui/label.tsx",
+        "name": "",
+        "chunks": [
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+        ],
+        "async": false
+      },
+      "Label": {
+        "id": "(sc_client)/./components/ui/label.tsx",
+        "name": "Label",
+        "chunks": [
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
         ],
         "async": false
       }
@@ -462,54 +522,28 @@
         "async": false
       }
     },
-    "(app-client)/./components/ui/label.tsx": {
+    "(app-client)/./node_modules/next/dist/client/link.js": {
       "*": {
-        "id": "(sc_client)/./components/ui/label.tsx",
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
         ],
         "async": false
       },
       "": {
-        "id": "(sc_client)/./components/ui/label.tsx",
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
         ],
         "async": false
       },
-      "Label": {
-        "id": "(sc_client)/./components/ui/label.tsx",
-        "name": "Label",
+      "default": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "default",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./components/forms/LoginForm.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/forms/LoginForm.tsx",
-        "name": "*",
-        "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./components/forms/LoginForm.tsx",
-        "name": "",
-        "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
-        ],
-        "async": false
-      },
-      "LoginForm": {
-        "id": "(sc_client)/./components/forms/LoginForm.tsx",
-        "name": "LoginForm",
-        "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
         ],
         "async": false
       }
@@ -517,11 +551,11 @@
   },
   "edgeSSRModuleMapping": {},
   "cssFiles": {
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\layout": [
-      "static/css/app/layout.css"
-    ],
     "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\layout": [
       "static/css/app/(dashboard)/layout.css"
+    ],
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\layout": [
+      "static/css/app/layout.css"
     ],
     "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\[id]\\layout": [
       "static/css/app/(dashboard)/[id]/layout.css"
@@ -1200,92 +1234,6 @@
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "*",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "*",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "default",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "default",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\globals.css#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx": {
-      "id": "(app-client)/./src/app/providers.tsx",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#": {
-      "id": "(app-client)/./src/app/providers.tsx",
-      "name": "",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#default": {
-      "id": "(app-client)/./src/app/providers.tsx",
-      "name": "default",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
     "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\(dashboard)\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
       "id": "null",
       "name": "default",
@@ -1469,6 +1417,108 @@
       ],
       "async": false
     },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "*",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "*",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js#": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js#suspense": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "suspense",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js#suspense": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "suspense",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js#NoSSR": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "NoSSR",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\shared\\lib\\lazy-dynamic\\dynamic-no-ssr.js#NoSSR": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
+      "name": "NoSSR",
+      "chunks": [
+        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\globals.css#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\providers.tsx#default": {
+      "id": "(app-client)/./src/app/providers.tsx",
+      "name": "default",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
     "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\[id]\\page.tsx": {
       "id": "(app-client)/./src/app/(dashboard)/[id]/page.tsx",
       "name": "*",
@@ -1500,6 +1550,54 @@
         "static/css/app/(dashboard)/[id]/layout.css"
       ]
     },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx": {
+      "id": "(app-client)/./components/forms/LoginForm.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx#": {
+      "id": "(app-client)/./components/forms/LoginForm.tsx",
+      "name": "",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx#LoginForm": {
+      "id": "(app-client)/./components/forms/LoginForm.tsx",
+      "name": "LoginForm",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx": {
+      "id": "(app-client)/./components/ui/label.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx#": {
+      "id": "(app-client)/./components/ui/label.tsx",
+      "name": "",
+      "chunks": [
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx#Label": {
+      "id": "(app-client)/./components/ui/label.tsx",
+      "name": "Label",
+      "chunks": [
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+      ],
+      "async": false
+    },
     "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\SignUpForm.tsx": {
       "id": "(app-client)/./components/forms/SignUpForm.tsx",
       "name": "*",
@@ -1524,51 +1622,51 @@
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx": {
-      "id": "(app-client)/./components/ui/label.tsx",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx#": {
-      "id": "(app-client)/./components/ui/label.tsx",
-      "name": "",
-      "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\label.tsx#Label": {
-      "id": "(app-client)/./components/ui/label.tsx",
-      "name": "Label",
-      "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx": {
-      "id": "(app-client)/./components/forms/LoginForm.tsx",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx#": {
-      "id": "(app-client)/./components/forms/LoginForm.tsx",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx#LoginForm": {
-      "id": "(app-client)/./components/forms/LoginForm.tsx",
-      "name": "LoginForm",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "default",
+      "chunks": [
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "default",
+      "chunks": [
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     }

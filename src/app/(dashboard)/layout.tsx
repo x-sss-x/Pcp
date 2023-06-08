@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 import Header from "@/components/sub-components/Header";
+import { getServerSession } from "next-auth/next";
+import { NextAuthOptions } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -8,10 +11,13 @@ export const metadata = {
   description: "",
 };
 
-export default function RootLayout(props: {
+export default async function RootLayout(props: {
   children: React.ReactNode;
 }) {
-  console.log(props);
+  const session = await getServerSession(NextAuthOptions)
+
+  if(!session?.user) redirect("/sign-in")
+  
   return (
     <div className={"h-full w-full"} style={inter.style}>
       <Header />

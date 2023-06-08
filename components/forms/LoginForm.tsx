@@ -31,7 +31,7 @@ const formSchema = z.object({
 export function LoginForm() {
   const error = useSearchParams().get("error");
   const [isLoading, setIsLoading] = useState(false);
-  const session = useSession()
+  const session = useSession();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -50,10 +50,13 @@ export function LoginForm() {
   }
 
   return (
-    <Form {...form}>
-      <div className="w-1/5 space-y-4">
+    <div className="w-1/5 space-y-4">
+      <Form {...form}>
         <pre>{JSON.stringify(session)}</pre>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full h-full space-y-8">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="w-full h-full space-y-8"
+        >
           {error && (
             <div className="bg-red-500 text-white p-2 rounded-md text-center">
               Credentials are worong !
@@ -98,19 +101,19 @@ export function LoginForm() {
             {isLoading ? "Signing..." : "SingIn"}
           </Button>
         </form>
-        <Button
-          onClick={() =>
-            signIn("google").catch((e) => {
-              console.log(e);
-            })
-          }
-          variant={"ghost"}
-          className="w-full bg-black py-2 text-white gap-2 flex items-center justify-center rounded-md px-3"
-        >
-          <AiOutlineGoogle className="text-3xl text-primary" />
-          <span>Google</span>
-        </Button>
-      </div>
-    </Form>
+      </Form>
+      <Button
+        onClick={() =>
+          signIn("google").catch((e) => {
+            console.log(e);
+          })
+        }
+        variant={"ghost"}
+        className="w-full bg-black py-2 text-white gap-2 flex items-center justify-center rounded-md px-3"
+      >
+        <AiOutlineGoogle className="text-3xl text-primary" />
+        <span>Google</span>
+      </Button>
+    </div>
   );
 }
