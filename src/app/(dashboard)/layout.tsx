@@ -18,7 +18,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <div className={"h-full w-full flex"}>
       <SideBar/>
-      <main className="bg-slate-800 w-full h-full">{props.children}</main>
+      <main className="bg-slate-800 w-full h-full overflow-y-scroll">{props.children}</main>
     </div>
   );
 }

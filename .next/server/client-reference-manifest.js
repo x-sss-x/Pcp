@@ -355,7 +355,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
         ],
         "async": false
       },
@@ -363,7 +363,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
         ],
         "async": false
       },
@@ -371,7 +371,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "default",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
         ],
         "async": false
       }
@@ -415,7 +415,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "*",
         "chunks": [
-          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
         ],
         "async": false
       },
@@ -423,7 +423,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "",
         "chunks": [
-          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
         ],
         "async": false
       },
@@ -431,7 +431,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "suspense",
         "chunks": [
-          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
         ],
         "async": false
       },
@@ -439,7 +439,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "NoSSR",
         "chunks": [
-          "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
         ],
         "async": false
       }
@@ -501,7 +501,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/label.tsx",
         "name": "*",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
         ],
         "async": false
       },
@@ -509,7 +509,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/label.tsx",
         "name": "",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
         ],
         "async": false
       },
@@ -517,7 +517,85 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/label.tsx",
         "name": "Label",
         "chunks": [
-          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./components/sub-components/Header.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/sub-components/Header.tsx",
+        "name": "*",
+        "chunks": [
+          "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/sub-components/Header.tsx",
+        "name": "",
+        "chunks": [
+          "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./components/sub-components/Header.tsx",
+        "name": "default",
+        "chunks": [
+          "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./components/sub-components/RightBar.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/sub-components/RightBar.tsx",
+        "name": "*",
+        "chunks": [
+          "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/sub-components/RightBar.tsx",
+        "name": "",
+        "chunks": [
+          "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./components/sub-components/RightBar.tsx",
+        "name": "default",
+        "chunks": [
+          "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./components/forms/SignUpForm.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/forms/SignUpForm.tsx",
+        "name": "*",
+        "chunks": [
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/forms/SignUpForm.tsx",
+        "name": "",
+        "chunks": [
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+        ],
+        "async": false
+      },
+      "SignUpForm": {
+        "id": "(sc_client)/./components/forms/SignUpForm.tsx",
+        "name": "SignUpForm",
+        "chunks": [
+          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
         ],
         "async": false
       }
@@ -1353,7 +1431,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1361,7 +1439,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1369,7 +1447,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1377,7 +1455,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1385,7 +1463,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1393,7 +1471,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1465,7 +1543,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1473,7 +1551,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1481,7 +1559,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1489,7 +1567,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1497,7 +1575,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1505,7 +1583,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1513,7 +1591,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1521,7 +1599,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/(auth)/layout:static/chunks/app/(auth)/layout.js"
+        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
       ],
       "async": false
     },
@@ -1584,7 +1662,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/label.tsx",
       "name": "*",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1592,7 +1670,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/label.tsx",
       "name": "",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     },
@@ -1600,7 +1678,79 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/label.tsx",
       "name": "Label",
       "chunks": [
-        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\Header.tsx": {
+      "id": "(app-client)/./components/sub-components/Header.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\Header.tsx#": {
+      "id": "(app-client)/./components/sub-components/Header.tsx",
+      "name": "",
+      "chunks": [
+        "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\Header.tsx#default": {
+      "id": "(app-client)/./components/sub-components/Header.tsx",
+      "name": "default",
+      "chunks": [
+        "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\RightBar.tsx": {
+      "id": "(app-client)/./components/sub-components/RightBar.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\RightBar.tsx#": {
+      "id": "(app-client)/./components/sub-components/RightBar.tsx",
+      "name": "",
+      "chunks": [
+        "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\RightBar.tsx#default": {
+      "id": "(app-client)/./components/sub-components/RightBar.tsx",
+      "name": "default",
+      "chunks": [
+        "app/(dashboard)/home/layout:static/chunks/app/(dashboard)/home/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\SignUpForm.tsx": {
+      "id": "(app-client)/./components/forms/SignUpForm.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\SignUpForm.tsx#": {
+      "id": "(app-client)/./components/forms/SignUpForm.tsx",
+      "name": "",
+      "chunks": [
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\SignUpForm.tsx#SignUpForm": {
+      "id": "(app-client)/./components/forms/SignUpForm.tsx",
+      "name": "SignUpForm",
+      "chunks": [
+        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
       ],
       "async": false
     }

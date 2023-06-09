@@ -29,7 +29,7 @@ export default function SideBar() {
         </div>
 
         <ul className="flex flex-col gap-4">
-          <NavButton href="/" isActive={pathname==="/"} icon={<HiHome className="text-2xl" />}>
+          <NavButton href="/home" isActive={pathname==="/home"} icon={<HiHome className="text-2xl" />}>
             Home
           </NavButton>
           <NavButton href="/explore" isActive={pathname==="/explore"} icon={<AiOutlineSearch className="text-2xl" />}>

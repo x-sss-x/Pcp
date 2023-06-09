@@ -1,9 +1,10 @@
-import Link from "next/link";
+import { getServerSession } from "next-auth/next";
+import { NextAuthOptions } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div className="h-full w-full flex justify-center tw-bg-slate-500">
-      <h1 className="text-2xl">Home Page</h1>
-    </div>
-  );
+export default async function Home() {
+  const session = await getServerSession(NextAuthOptions);
+
+  if(session?.user) redirect("/home")
+  else redirect("/sign-in")
 }

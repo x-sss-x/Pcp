@@ -1,8 +1,6 @@
 {
-  "/(dashboard)/page": "app/(dashboard)/page.js",
-  "/(dashboard)/bookmarks/page": "app/(dashboard)/bookmarks/page.js",
-  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/(dashboard)/explore/page": "app/(dashboard)/explore/page.js",
-  "/(dashboard)/jobs/page": "app/(dashboard)/jobs/page.js"
+  "/(dashboard)/jobs/page": "app/(dashboard)/jobs/page.js",
+  "/(dashboard)/home/page": "app/(dashboard)/home/page.js"
 }
