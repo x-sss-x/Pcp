@@ -1,9 +1,16 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { NextAuthOptions } from "@/app/api/auth/[...nextauth]/route";
+import { Avatar, AvatarImage } from "../ui/avatar";
+import { AvatarFallback } from "@radix-ui/react-avatar";
 
 export default function Header() {
+  const { data } = useSession();
+
   return (
     <div
       className={
@@ -19,12 +26,12 @@ export default function Header() {
         />
       </div>
       <div className="flex gap-3">
-      <Link href={"/sign-in"}>
-          <Button size={"sm"} variant={"outline"}>Signin</Button>
-        </Link>
-        <Link href={"/sign-in"}>
-          <Button size={"sm"} variant={"ghost"}>SignUp</Button>
-        </Link>
+        {data && (
+          <Avatar>
+            <AvatarImage src={data.user?.image ?? undefined} alt="@shadcn" />
+            <AvatarFallback>{data.user?.name?.substring(0,2)}</AvatarFallback>
+          </Avatar>
+        )}
       </div>
     </div>
   );

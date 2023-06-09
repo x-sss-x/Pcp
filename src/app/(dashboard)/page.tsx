@@ -1,13 +1,13 @@
-"use client"
-import { LoginForm } from "@/components/forms/LoginForm";
-import { useSession } from "next-auth/react";
+import { getServerSession } from "next-auth/next";
 import Link from "next/link";
+import { NextAuthOptions } from "../api/auth/[...nextauth]/route";
 
-export default function Home() {
-  const session = useSession();
-  console.log(session)
+export default async function Home() {
+  const session = await getServerSession(NextAuthOptions)
+
   return (
     <main className="h-full w-full flex justify-center">
+      <pre>{JSON.stringify(session)}</pre>
       <ul>
         <Link href={"/1"}><li>post 1</li></Link>
         <Link href={"/2"}><li>post 2</li></Link>

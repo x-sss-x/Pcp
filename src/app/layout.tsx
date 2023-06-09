@@ -14,7 +14,6 @@ export default function RootLayout(props: {
   children: React.ReactNode;
   authModal: React.ReactNode;
 }) {
-  console.log(props)
   return (
     <html lang="en">
       <body className={"h-screen w-screen"} style={inter.style}>
