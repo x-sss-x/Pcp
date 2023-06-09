@@ -58,21 +58,15 @@ export const NextAuthOptions: AuthOptions = {
     // signOut: "/sign-out",
     // error: '/error', // Error code passed in query string as ?error=
     verifyRequest: "/verify-request", // (used for check email message)
-    // newUser: "/sign-up", // New users will be directed here on first sign in (leave the property out if not of interest)
+    newUser: "/sign-up", // New users will be directed here on first sign in (leave the property out if not of interest)
   },
   callbacks: {
-    // signIn(params) {
-    //   if (params.user.id) return "/";
-    //   else return "/sign-in";
-    // // },
     async jwt({ token, trigger, account, user }) {
-      console.log("JWT CALLBACK",token)
       return token;
     },
-    async session({session,user,newSession}) {
-      console.log("SESSION CALLBACK",session,newSession)
+    async session({session,trigger}) {
       return session;
-    },
+    }
   },
   session:{
     strategy:"jwt"

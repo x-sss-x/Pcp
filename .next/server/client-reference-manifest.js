@@ -230,9 +230,9 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./components/sub-components/Header.tsx": {
+    "(app-client)/./components/sub-components/SideBar.tsx": {
       "*": {
-        "id": "(sc_client)/./components/sub-components/Header.tsx",
+        "id": "(sc_client)/./components/sub-components/SideBar.tsx",
         "name": "*",
         "chunks": [
           "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
@@ -240,7 +240,7 @@ self.__RSC_MANIFEST={
         "async": false
       },
       "": {
-        "id": "(sc_client)/./components/sub-components/Header.tsx",
+        "id": "(sc_client)/./components/sub-components/SideBar.tsx",
         "name": "",
         "chunks": [
           "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
@@ -248,8 +248,34 @@ self.__RSC_MANIFEST={
         "async": false
       },
       "default": {
-        "id": "(sc_client)/./components/sub-components/Header.tsx",
+        "id": "(sc_client)/./components/sub-components/SideBar.tsx",
         "name": "default",
+        "chunks": [
+          "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./components/ui/NavButton.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/ui/NavButton.tsx",
+        "name": "*",
+        "chunks": [
+          "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/ui/NavButton.tsx",
+        "name": "",
+        "chunks": [
+          "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+        ],
+        "async": false
+      },
+      "NavButton": {
+        "id": "(sc_client)/./components/ui/NavButton.tsx",
+        "name": "NavButton",
         "chunks": [
           "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
         ],
@@ -320,6 +346,32 @@ self.__RSC_MANIFEST={
         "name": "default",
         "chunks": [
           "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/link.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "*",
+        "chunks": [
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "",
+        "chunks": [
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "default",
+        "chunks": [
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
         ],
         "async": false
       }
@@ -418,32 +470,6 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./src/app/(dashboard)/[id]/page.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/(dashboard)/[id]/page.tsx",
-        "name": "*",
-        "chunks": [
-          "app/(dashboard)/[id]/page:static/chunks/app/(dashboard)/[id]/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/app/(dashboard)/[id]/page.tsx",
-        "name": "",
-        "chunks": [
-          "app/(dashboard)/[id]/page:static/chunks/app/(dashboard)/[id]/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/app/(dashboard)/[id]/page.tsx",
-        "name": "default",
-        "chunks": [
-          "app/(dashboard)/[id]/page:static/chunks/app/(dashboard)/[id]/page.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./components/forms/LoginForm.tsx": {
       "*": {
         "id": "(sc_client)/./components/forms/LoginForm.tsx",
@@ -475,7 +501,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/label.tsx",
         "name": "*",
         "chunks": [
-          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
         ],
         "async": false
       },
@@ -483,7 +509,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/label.tsx",
         "name": "",
         "chunks": [
-          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
         ],
         "async": false
       },
@@ -491,59 +517,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/label.tsx",
         "name": "Label",
         "chunks": [
-          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./components/forms/SignUpForm.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/forms/SignUpForm.tsx",
-        "name": "*",
-        "chunks": [
-          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./components/forms/SignUpForm.tsx",
-        "name": "",
-        "chunks": [
-          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-        ],
-        "async": false
-      },
-      "SignUpForm": {
-        "id": "(sc_client)/./components/forms/SignUpForm.tsx",
-        "name": "SignUpForm",
-        "chunks": [
-          "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./node_modules/next/dist/client/link.js": {
-      "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "*",
-        "chunks": [
-          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "",
-        "chunks": [
-          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "default",
-        "chunks": [
-          "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
+          "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
         ],
         "async": false
       }
@@ -556,9 +530,6 @@ self.__RSC_MANIFEST={
     ],
     "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\layout": [
       "static/css/app/layout.css"
-    ],
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\[id]\\layout": [
-      "static/css/app/(dashboard)/[id]/layout.css"
     ]
   },
   "clientModules": {
@@ -1234,32 +1205,57 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\(dashboard)\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
+    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\globals.css#": {
       "id": "null",
       "name": "default",
       "chunks": [
-        "static/css/app/(dashboard)/layout.css"
+        "static/css/app/(dashboard)/layout.css",
+        "static/css/app/layout.css"
       ]
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\Header.tsx": {
-      "id": "(app-client)/./components/sub-components/Header.tsx",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\SideBar.tsx": {
+      "id": "(app-client)/./components/sub-components/SideBar.tsx",
       "name": "*",
       "chunks": [
         "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\Header.tsx#": {
-      "id": "(app-client)/./components/sub-components/Header.tsx",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\SideBar.tsx#": {
+      "id": "(app-client)/./components/sub-components/SideBar.tsx",
       "name": "",
       "chunks": [
         "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\Header.tsx#default": {
-      "id": "(app-client)/./components/sub-components/Header.tsx",
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\sub-components\\SideBar.tsx#default": {
+      "id": "(app-client)/./components/sub-components/SideBar.tsx",
       "name": "default",
+      "chunks": [
+        "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\NavButton.tsx": {
+      "id": "(app-client)/./components/ui/NavButton.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\NavButton.tsx#": {
+      "id": "(app-client)/./components/ui/NavButton.tsx",
+      "name": "",
+      "chunks": [
+        "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\ui\\NavButton.tsx#NavButton": {
+      "id": "(app-client)/./components/ui/NavButton.tsx",
+      "name": "NavButton",
       "chunks": [
         "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
       ],
@@ -1350,6 +1346,54 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/(dashboard)/layout:static/chunks/app/(dashboard)/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "default",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "default",
+      "chunks": [
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
       ],
       "async": false
     },
@@ -1481,14 +1525,7 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\globals.css#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
+    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\layout.tsx\",\"import\":\"Poppins\",\"arguments\":[{\"subsets\":[\"devanagari\"],\"weight\":\"400\"}],\"variableName\":\"inter\"}#": {
       "id": "null",
       "name": "default",
       "chunks": [
@@ -1519,37 +1556,6 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\[id]\\page.tsx": {
-      "id": "(app-client)/./src/app/(dashboard)/[id]/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/(dashboard)/[id]/page:static/chunks/app/(dashboard)/[id]/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\[id]\\page.tsx#": {
-      "id": "(app-client)/./src/app/(dashboard)/[id]/page.tsx",
-      "name": "",
-      "chunks": [
-        "app/(dashboard)/[id]/page:static/chunks/app/(dashboard)/[id]/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\src\\app\\(dashboard)\\[id]\\page.tsx#default": {
-      "id": "(app-client)/./src/app/(dashboard)/[id]/page.tsx",
-      "name": "default",
-      "chunks": [
-        "app/(dashboard)/[id]/page:static/chunks/app/(dashboard)/[id]/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\(dashboard)\\\\[id]\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/(dashboard)/[id]/layout.css"
-      ]
-    },
     "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\LoginForm.tsx": {
       "id": "(app-client)/./components/forms/LoginForm.tsx",
       "name": "*",
@@ -1578,7 +1584,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/label.tsx",
       "name": "*",
       "chunks": [
-        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
       ],
       "async": false
     },
@@ -1586,7 +1592,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/label.tsx",
       "name": "",
       "chunks": [
-        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
       ],
       "async": false
     },
@@ -1594,79 +1600,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/label.tsx",
       "name": "Label",
       "chunks": [
-        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\SignUpForm.tsx": {
-      "id": "(app-client)/./components/forms/SignUpForm.tsx",
-      "name": "*",
-      "chunks": [
-        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\SignUpForm.tsx#": {
-      "id": "(app-client)/./components/forms/SignUpForm.tsx",
-      "name": "",
-      "chunks": [
-        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\components\\forms\\SignUpForm.tsx#SignUpForm": {
-      "id": "(app-client)/./components/forms/SignUpForm.tsx",
-      "name": "SignUpForm",
-      "chunks": [
-        "app/(auth)/sign-up/page:static/chunks/app/(auth)/sign-up/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "*",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "*",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\client\\link.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "default",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Pc\\Desktop\\Pcp\\node_modules\\next\\dist\\esm\\client\\link.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "default",
-      "chunks": [
-        "app/(dashboard)/page:static/chunks/app/(dashboard)/page.js"
+        "app/(auth)/sign-in/page:static/chunks/app/(auth)/sign-in/page.js"
       ],
       "async": false
     }

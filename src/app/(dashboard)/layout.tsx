@@ -1,27 +1,24 @@
-import { Inter } from "next/font/google";
-import Header from "@/components/sub-components/Header";
+import "../globals.css"
 import { getServerSession } from "next-auth/next";
 import { NextAuthOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
-
-const inter = Inter({ subsets: ["latin"] });
+import Image from "next/image";
+import SideBar from "@/components/sub-components/SideBar";
 
 export const metadata = {
   title: "Handic App",
   description: "",
 };
 
-export default async function RootLayout(props: {
-  children: React.ReactNode;
-}) {
-  const session = await getServerSession(NextAuthOptions)
+export default async function RootLayout(props: { children: React.ReactNode }) {
+  const session = await getServerSession(NextAuthOptions);
 
-  if(!session?.user) redirect("/sign-in")
-  
+  if (!session?.user) redirect("/sign-in");
+
   return (
-    <div className={"h-full w-full"} style={inter.style}>
-      <Header />
-      {props.children}
+    <div className={"h-full w-full flex"}>
+      <SideBar/>
+      <main className="bg-slate-800 w-full h-full">{props.children}</main>
     </div>
   );
 }

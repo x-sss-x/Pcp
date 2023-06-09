@@ -1,9 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import {Poppins } from "next/font/google";
 import Providers from "./providers";
-import Header from "@/components/sub-components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Poppins({ subsets: ["devanagari"],weight:"400" });
 
 export const metadata = {
   title: "Handic App",
