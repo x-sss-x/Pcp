@@ -22,6 +22,7 @@ const main = async () => {
         bio: faker.lorem.words(10),
         password: hashedPassword,
         name: faker.person.fullName(),
+        image:faker.image.avatar(),
         Post: {
           createMany: {
             data: [

@@ -49,6 +49,9 @@ model User {
   Comment       Comment[]
   Post          Post[]
   SavedPost     SavedPost[]
+
+  @@index([id])
+  @@map("Users")
 }
 
 model VerificationToken {
@@ -63,25 +66,28 @@ model Post {
   id        String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   content   String?
   media_url String      @db.Text
-  user      User        @relation(fields: [userId], references: [id])
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String      @db.Uuid
+  createdAt DateTime    @default(dbgenerated("now()")) @db.Timestamptz()
   comments  Comment[]
   SavedPost SavedPost[]
 }
 
 model Comment {
-  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  content String
-  user    User   @relation(fields: [userId], references: [id])
-  post    Post   @relation(fields: [postId], references: [id])
-  postId  String @db.Uuid
-  userId  String @db.Uuid
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  content   String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    String   @db.Uuid
+  userId    String   @db.Uuid
+  createdAt DateTime @default(dbgenerated("now()")) @db.Timestamptz()
 }
 
 model SavedPost {
-  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  user   User   @relation(fields: [userId], references: [id])
-  post   Post   @relation(fields: [postId], references: [id])
-  userId String @db.Uuid
-  postId String @db.Uuid
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userId    String   @db.Uuid
+  postId    String   @db.Uuid
+  createdAt DateTime @default(dbgenerated("now()")) @db.Timestamptz()
 }
