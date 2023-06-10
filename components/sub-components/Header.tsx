@@ -18,7 +18,7 @@ export default function Header({
   return (
     <div
       className={
-        "h-[60px] py-2 w-full justify-between backdrop-blur-sm border-b border-gray-300 sticky top-0 flex items-center px-5"
+        "h-[60px] py-2 w-full justify-between backdrop-blur-sm bg-[rgba(255,255,255,0.8)] z-10 border-b border-gray-300 sticky top-0 flex items-center px-5"
       }
     >
       <div>

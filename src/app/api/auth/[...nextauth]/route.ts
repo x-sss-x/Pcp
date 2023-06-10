@@ -61,16 +61,22 @@ export const NextAuthOptions: AuthOptions = {
     newUser: "/sign-up", // New users will be directed here on first sign in (leave the property out if not of interest)
   },
   callbacks: {
-    async jwt({ token, trigger, account, user }) {
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        session.user.id = token.uid;
+      }
+      return session;
+    },
+    jwt: async ({ user, token }) => {
+      if (user) {
+        token.uid = user.id;
+      }
       return token;
     },
-    async session({session,trigger}) {
-      return session;
-    }
   },
-  session:{
-    strategy:"jwt"
-  }
+  session: {
+    strategy: "jwt",
+  },
 };
 
 const handler = NextAuth(NextAuthOptions);

@@ -101,6 +101,23 @@ export interface Database {
           userId?: string
         }
       }
+      Like: {
+        Row: {
+          id: string
+          postId: string
+          userId: string
+        }
+        Insert: {
+          id?: string
+          postId: string
+          userId: string
+        }
+        Update: {
+          id?: string
+          postId?: string
+          userId?: string
+        }
+      }
       Post: {
         Row: {
           content: string | null
@@ -218,7 +235,13 @@ export interface Database {
       }
     }
     Views: {
-      [_ in never]: never
+      LikeDetails: {
+        Row: {
+          count: number | null
+          id: string | null
+          postId: string | null
+        }
+      }
     }
     Functions: {
       [_ in never]: never

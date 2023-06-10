@@ -4,6 +4,8 @@ import {
   createEntityAdapter,
   createSlice,
 } from "@reduxjs/toolkit";
+import { RootState } from ".";
+import { Database } from "../../types/supabase";
 
 export const fetchIntialPosts = createAsyncThunk<
   any,
@@ -13,13 +15,17 @@ export const fetchIntialPosts = createAsyncThunk<
   }
 >(
   "/post/fetchIntialPosts",
-  async (_payload, { fulfillWithValue, rejectWithValue }) => {
+  async (payload, { fulfillWithValue, rejectWithValue }) => {
     try {
-      const response = await SupaClient.from("SavedPost")
-        .select("*,User(name)")
-        .order("createdAt", { ascending: false }).limit(10);
-      const data = response.data;
-      console.log(response.error)
+      const response = await SupaClient.from("Post")
+        .select("*,User(name,username,image),LikeDetails(count),Like(userId)")
+        .order("createdAt", { ascending: false })
+        .limit(10);
+      const data = response.data?.map((post) => ({
+        ...post,
+        Like: post.Like.map((Likee) => Likee.userId),
+      }));
+      console.log(response.error);
       return fulfillWithValue(data);
     } catch (e: any) {
       return rejectWithValue(e.message);
@@ -27,7 +33,14 @@ export const fetchIntialPosts = createAsyncThunk<
   }
 );
 
-const PostAdapter = createEntityAdapter<any>({
+export type PostProps = Database["public"]["Tables"]["Post"]["Row"] & {
+  User: Database["public"]["Tables"]["User"]["Row"];
+  LikeDetails: { count: number }[];
+  isLiked?: boolean;
+  Like: string[];
+};
+
+const PostAdapter = createEntityAdapter<PostProps>({
   selectId: (post) => post.id,
 });
 
@@ -50,4 +63,6 @@ export const PostSlice = createSlice({
   },
 });
 
-export const PostSelector = PostAdapter.getSelectors();
+export const PostSelector = PostAdapter.getSelectors<RootState>(
+  (state) => state.post
+);

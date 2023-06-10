@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import Header from "@/components/sub-components/Header";
 import RightBar from "@/components/sub-components/RightBar";
 import { useAppDispatch } from "@/hooks";
-import { store } from "@/store";
 import { fetchIntialPosts } from "@/store/post.slice";
 
 export const metadata = {
@@ -11,17 +10,20 @@ export const metadata = {
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {
-  const dispatch= useAppDispatch();
+  const dispatch = useAppDispatch();
 
-  dispatch(fetchIntialPosts())
+  dispatch(fetchIntialPosts());
 
   return (
-    <div className={"h-full w-full grid"} style={{gridTemplateColumns:"2fr 1fr"}}>
-      <section aria-label="post-container block">
-        <Header title="Home"/>
-         {props.children}
-      </section>  
-      <RightBar/>
+    <div
+      className={"w-full grid h-full"}
+      style={{ gridTemplateColumns: "2fr 1fr", overflowY: "scroll" }}
+    >
+      <section aria-label="post-container block h-fit">
+        <Header title="Home" />
+        {props.children}
+      </section>
+      <RightBar />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 const navbuttonVariants = cva(
-  "flex text-md font-extralight tracking-wider items-center justify-start px-5 hover:cursor-pointer py-3 gap-4 rounded-full hover:bg-slate-200 transition-all duration-150  text-slate-700",
+  "flex text-md font-normal tracking-wider items-center justify-start px-5 hover:cursor-pointer py-3 gap-4 rounded-full hover:bg-slate-100 transition-all duration-150  text-slate-700",
   {
     variants: {
       isActive: {
