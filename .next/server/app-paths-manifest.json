@@ -1,6 +1,0 @@
-{
-  "/(dashboard)/page": "app/(dashboard)/page.js",
-  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/(dashboard)/[id]/page": "app/(dashboard)/[id]/page.js"
-}

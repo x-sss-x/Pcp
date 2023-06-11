@@ -8,30 +8,22 @@ import { NextAuthOptions } from "@/app/api/auth/[...nextauth]/route";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
 
-export default function Header() {
-  const { data } = useSession();
-
+export default function Header({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle?: string;
+}) {
   return (
     <div
       className={
-        "h-[56px] w-full justify-between bg-slate-50 border-b border-gray-300 sticky top-0 flex items-center px-5"
+        "h-[60px] py-2 w-full justify-between backdrop-blur-sm bg-[rgba(255,255,255,0.8)] z-10 border-b border-gray-300 sticky top-0 flex items-center px-5"
       }
     >
-      <div className="">
-        <Image
-          src={"/HandicAppLogo.png"}
-          alt="HandicAppLogo"
-          width={80}
-          height={100}
-        />
-      </div>
-      <div className="flex gap-3">
-        {data && (
-          <Avatar>
-            <AvatarImage src={data.user?.image ?? undefined} alt="@shadcn" />
-            <AvatarFallback>{data.user?.name?.substring(0,2)}</AvatarFallback>
-          </Avatar>
-        )}
+      <div>
+        <h3 className="text-lg">{title}</h3>
+        {subtitle && <span className="text-sm text-slate-500">{subtitle}</span>}
       </div>
     </div>
   );

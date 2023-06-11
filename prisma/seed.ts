@@ -9,6 +9,7 @@ const main = async () => {
   await prisma.$connect();
   await prisma.savedPost.deleteMany();
   await prisma.comment.deleteMany();
+  await prisma.like.deleteMany();
   await prisma.post.deleteMany();
   await prisma.user.deleteMany();
   const hashedPassword = await hash("test1234",12);
@@ -22,6 +23,7 @@ const main = async () => {
         bio: faker.lorem.words(10),
         password: hashedPassword,
         name: faker.person.fullName(),
+        image:faker.image.avatar(),
         Post: {
           createMany: {
             data: [

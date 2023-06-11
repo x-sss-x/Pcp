@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
 }
 
 datasource db {
@@ -13,15 +14,14 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -36,19 +36,23 @@ model Session {
 
 model User {
   id            String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name          String?     @db.Text
-  username      String?     @db.Text
-  password      String?     @db.Text
-  bio           String?     @db.Text
-  address       String?     @db.Text
+  name          String?
+  username      String?
+  password      String?
+  bio           String?
+  address       String?
   email         String?     @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
-  sessions      Session[]
   Comment       Comment[]
+  Like          Like[]
   Post          Post[]
   SavedPost     SavedPost[]
+  sessions      Session[]
+
+  @@index([id])
+  @@map("User")
 }
 
 model VerificationToken {
@@ -60,28 +64,50 @@ model VerificationToken {
 }
 
 model Post {
-  id        String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  content   String?
-  media_url String      @db.Text
-  user      User        @relation(fields: [userId], references: [id])
-  userId    String      @db.Uuid
-  comments  Comment[]
-  SavedPost SavedPost[]
+  id          String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  content     String?
+  media_url   String
+  userId      String        @db.Uuid
+  createdAt   DateTime      @default(now()) @db.Timestamptz(6)
+  comments    Comment[]
+  Like        Like[]
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  SavedPost   SavedPost[]
+  LikeDetails LikeDetails[]
 }
 
 model Comment {
-  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  content String
-  user    User   @relation(fields: [userId], references: [id])
-  post    Post   @relation(fields: [postId], references: [id])
-  postId  String @db.Uuid
-  userId  String @db.Uuid
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  content   String
+  postId    String   @db.Uuid
+  userId    String   @db.Uuid
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Like {
+  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  postId String @db.Uuid
+  userId String @db.Uuid
+  post   Post   @relation(fields: [postId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
 }
 
 model SavedPost {
-  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  user   User   @relation(fields: [userId], references: [id])
-  post   Post   @relation(fields: [postId], references: [id])
-  userId String @db.Uuid
-  postId String @db.Uuid
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @db.Uuid
+  postId    String   @db.Uuid
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+view LikeDetails {
+  id     String  @id @db.Uuid
+  postId String  @db.Uuid
+  post   Post    @relation(fields: [postId], references: [id])
+  count  BigInt?
+
+  @@unique([id])
 }

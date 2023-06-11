@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 const formSchema = z.object({
   username: z
@@ -47,16 +48,28 @@ export function SignUpForm() {
     console.log(values);
   }
 
-  function onGooglelogin(values: z.infer<typeof formSchema>) {}
-
   return (
-    <div className="w-1/5 space-y-4">
+    <div className="w-1/5 space-y-3">
+      <Button
+        onClick={() =>
+          signIn("google").catch((e) => {
+            console.log(e);
+          })
+        }
+        size={"lg"}
+        variant={"ghost"}
+        className="w-full bg-black py-2 text-white gap-2 flex items-center justify-center rounded-md px-3"
+      >
+        <AiOutlineGoogle className="text-3xl text-primary" />
+        <span className="text-md">Signin With Google</span>
+      </Button>
+      <span className="text-sm w-full block text-center">Or</span>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 w-full"
         >
-          <h1 className="text-3xl text-center font-bold">Sign Up</h1>
+          <h1 className="text-2xl text-center font-bold">Create Account</h1>
           <FormField
             control={form.control}
             name="username"
@@ -98,23 +111,12 @@ export function SignUpForm() {
               </FormItem>
             )}
           />
-          <Button size={"lg"} type="submit" className="w-full">
+          <Button size={"lg"} type="submit" className="w-full text-md">
             Submit
           </Button>
         </form>
-      </Form>
-      <Button
-        onClick={() =>
-          signIn("google").catch((e) => {
-            console.log(e);
-          })
-        }
-        variant={"ghost"}
-        className="w-full bg-black py-2 text-white gap-2 flex items-center justify-center rounded-md px-3"
-      >
-        <AiOutlineGoogle className="text-3xl text-primary" />
-        <span>Google</span>
-      </Button>
+      </Form>      
+      <span className="text-sm mt-3 w-full block text-center">have an account already ? <Link href="/sign-in" className="text-blue-500 hover:underline">signin</Link></span>
     </div>
   );
 }
