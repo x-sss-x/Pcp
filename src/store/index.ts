@@ -1,13 +1,14 @@
-import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { PostSlice } from "./post.slice";
 import { UserSlice } from "./user.slice";
-import {createWrapper} from "next-redux-wrapper"
+import { LikeSlice } from "./like.slice";
 
 
 export const store = configureStore({
   reducer: {
     [PostSlice.name]:PostSlice.reducer,
     [UserSlice.name]:UserSlice.reducer,
+    [LikeSlice.name]:LikeSlice.reducer,
   },
 });
 

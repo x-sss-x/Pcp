@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { PostProps } from "@/store/post.slice";
 import moment from "moment";
@@ -6,13 +6,19 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { HiOutlineChatBubbleBottomCenter } from "react-icons/hi2";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { store } from "@/store";
-import { Spinner } from "../ui/spinner";
-import { Session } from "next-auth";
+import { useUser } from "@/app/UserProvider";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { SupaClient } from "@/utils/supabase";
+import { LikeSelector, fetchLike, postLike } from "@/store/like.slice";
+import { useAnimate, usePresence } from "framer-motion";
 
 export default function Post({ props }: { props: PostProps }) {
-  const { LikeDetails, User, content, createdAt, media_url, isLiked } =
-    props;
+  const user = useUser();
+  const dispatch = useAppDispatch();
+
+  const { User, content, createdAt, media_url, Like, id } = props;
+
+  dispatch(fetchLike({ postId: id }));
 
   return (
     <div
@@ -24,8 +30,8 @@ export default function Post({ props }: { props: PostProps }) {
       <div className="py-2 px-6">
         <div className="flex gap-3">
           <Avatar className="border border-slate-300">
-            <AvatarImage src={User.image ? User?.image : ""} />
-            <AvatarFallback>{User.name?.charAt(0)}</AvatarFallback>
+            <AvatarImage src={User?.image ? User?.image : ""} />
+            <AvatarFallback>{User?.name?.charAt(0)}</AvatarFallback>
           </Avatar>
           <div>
             <h3 className="text-sm text-black font-medium block space-x-1">
@@ -55,21 +61,7 @@ export default function Post({ props }: { props: PostProps }) {
 
       {/* footer */}
       <div className="px-14 py-3 flex space-x-16">
-        <div className="flex items-center justify-center gap-1 w-fit text-slate-600">
-          <Button
-            variant={"ghost"}
-            className="rounded-full p-1 h-10 w-10 hover:bg-pink-100 hover:text-pink-500"
-          >
-            {isLiked ? (
-              <AiFillHeart className="text-xl text-pink-500" />
-            ) : (
-              <AiOutlineHeart className="text-xl" />
-            )}
-          </Button>
-          <span className="text-sm">
-            {LikeDetails.length ?? LikeDetails[0]?.count}
-          </span>
-        </div>
+        <LikeButton userId={user?.id!} postId={id} Like={Like} />
         <div className="flex items-center justify-center gap-1 w-fit text-slate-600">
           <Button
             variant={"ghost"}
@@ -83,3 +75,58 @@ export default function Post({ props }: { props: PostProps }) {
     </div>
   );
 }
+
+const LikeButton = ({
+  userId,
+  postId,
+}: {
+  userId: string;
+  postId: string;
+  Like: string[];
+}) => {
+  const LikeIds = useAppSelector((state) =>
+    LikeSelector.selectById(state, postId)
+  );
+  const isLiked = LikeIds?.idList.includes(userId);
+  const dispatch = useAppDispatch();
+  const [isPresent, safeToRemove] = usePresence();
+  const [scope, animate] = useAnimate();
+
+  async function onLike() {
+    dispatch(postLike({ userId, postId }));
+  }
+
+  useEffect(() => {
+    async function onAnimate() {
+      await animate(
+        scope.current,
+        { scale: [1, 1.4,1] },
+        { duration: 0.2,bounce:10,bounceDamping:23,bounceStiffness:30}
+      );
+    }
+    if (isPresent) {
+      onAnimate();
+    } else {
+      safeToRemove();
+    }
+  }, [isLiked]);
+
+  return (
+    <div className="flex items-center justify-center gap-1 w-fit text-slate-600">
+      <Button
+        onClick={onLike}
+        variant={"ghost"}
+        className="rounded-full p-1 h-10 w-10 hover:bg-pink-100 hover:text-pink-500"
+      >
+        <div ref={scope}>
+          {isLiked ? (
+            <AiFillHeart className="text-xl text-pink-500" />
+          ) : (
+            <AiOutlineHeart className="text-xl" />
+          )}
+        </div>
+      </Button>
+      <span className="text-sm">{LikeIds?.idList.length}</span>
+    </div>
+  );
+};

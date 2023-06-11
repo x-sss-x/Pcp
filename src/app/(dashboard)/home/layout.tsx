@@ -1,8 +1,9 @@
 "use client";
 import Header from "@/components/sub-components/Header";
 import RightBar from "@/components/sub-components/RightBar";
-import { useAppDispatch } from "@/hooks";
-import { fetchIntialPosts } from "@/store/post.slice";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { fetchIntialPosts, PostSelector } from "@/store/post.slice";
+import { useCallback } from "react";
 
 export const metadata = {
   title: "Handic App",
@@ -11,13 +12,18 @@ export const metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const dispatch = useAppDispatch();
+  const posts = useAppSelector(PostSelector.selectAll);
 
-  dispatch(fetchIntialPosts());
+  const fetchMemoPosts = useCallback(() => {
+    dispatch(fetchIntialPosts());
+  }, []);
+
+  posts.length == 0 && fetchMemoPosts();
 
   return (
     <div
-      className={"w-full grid h-full"}
-      style={{ gridTemplateColumns: "2fr 1fr", overflowY: "scroll" }}
+      className={"w-full grid h-fit"}
+      style={{ gridTemplateColumns: "2fr 1fr" }}
     >
       <section aria-label="post-container block h-fit">
         <Header title="Home" />

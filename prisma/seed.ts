@@ -9,6 +9,7 @@ const main = async () => {
   await prisma.$connect();
   await prisma.savedPost.deleteMany();
   await prisma.comment.deleteMany();
+  await prisma.like.deleteMany();
   await prisma.post.deleteMany();
   await prisma.user.deleteMany();
   const hashedPassword = await hash("test1234",12);

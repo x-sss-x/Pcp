@@ -21,9 +21,10 @@ export const fetchIntialPosts = createAsyncThunk<
         .select("*,User(name,username,image),LikeDetails(count),Like(userId)")
         .order("createdAt", { ascending: false })
         .limit(10);
+      console.log(payload);
       const data = response.data?.map((post) => ({
         ...post,
-        Like: post.Like.map((Likee) => Likee.userId),
+        Like: post.Like.map((likee) => likee.userId),
       }));
       console.log(response.error);
       return fulfillWithValue(data);
@@ -32,6 +33,7 @@ export const fetchIntialPosts = createAsyncThunk<
     }
   }
 );
+
 
 export type PostProps = Database["public"]["Tables"]["Post"]["Row"] & {
   User: Database["public"]["Tables"]["User"]["Row"];
@@ -46,7 +48,29 @@ const PostAdapter = createEntityAdapter<PostProps>({
 
 export const PostSlice = createSlice({
   name: "post",
-  reducers: {},
+  reducers: {
+    addOneLike(state, action) {
+      const doneLike = [
+        ...state.entities[action.payload.postId]!.Like,
+        action.payload.userId,
+      ];
+      return PostAdapter.updateOne(state, {
+        id: action.payload.postId,
+        changes: { Like: doneLike },
+      });
+    },
+    removeOneLike(state, action) {
+      const doneLike = [
+        ...state.entities[action.payload.postId]!.Like.filter(
+          (likee) => likee !== action.payload.userId
+        ),
+      ];
+      return PostAdapter.updateOne(state, {
+        id: action.payload.postId,
+        changes: { Like: doneLike },
+      });
+    },
+  },
   initialState: PostAdapter.getInitialState<{ isLoading: boolean }>({
     isLoading: false,
   }),
@@ -66,3 +90,5 @@ export const PostSlice = createSlice({
 export const PostSelector = PostAdapter.getSelectors<RootState>(
   (state) => state.post
 );
+
+export const { addOneLike, removeOneLike } = PostSlice.actions;

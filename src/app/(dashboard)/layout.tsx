@@ -1,8 +1,7 @@
-import "../globals.css"
+import "../globals.css";
 import { getServerSession } from "next-auth/next";
 import { NextAuthOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
-import Image from "next/image";
 import SideBar from "@/components/sub-components/SideBar";
 
 export const metadata = {
@@ -17,8 +16,13 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <div className={"h-full w-full flex"}>
-      <SideBar/>
-      <main className="bg-slate-800 w-full h-full overflow-y-scroll">{props.children}</main>
+      <SideBar />
+      <main
+        className="bg-slate-800 w-full h-full"
+        style={{ gridTemplateColumns: "2fr 1fr", overflowY: "scroll" }}
+      >
+        {props.children}
+      </main>
     </div>
   );
 }
