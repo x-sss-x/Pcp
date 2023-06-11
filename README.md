@@ -35,9 +35,11 @@ npx supbase status
 To get `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` watch this vedio
 
 <!-- blankLine -->
-<figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tjCxuDh5e9I" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+<figure class="video_container">  
+<iframe src="https://www.youtube.com/embed/enMumwvLAug" frameborder="0" allowfullscreen="true"></iframe>
 </figure>
+
 <!-- blankLine -->
 
 > 4. Create `.env.local` file in root project directory
