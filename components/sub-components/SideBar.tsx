@@ -6,25 +6,26 @@ import { useSession } from "next-auth/react";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
 import {
-  HiArrowTrendingDown,
-  HiBookmark,
-  HiHome,
+  HiBookmark,  
   HiPlus,
-  HiPlusCircle,
   HiShoppingBag,
 } from "react-icons/hi2";
+import {
+  HiSearch,
+  HiOutlineHome,
+  HiHome,
+} from "react-icons/hi";
 import { NavButton } from "../ui/NavButton";
-import { AiOutlineSearch } from "react-icons/ai";
 import { LogOut } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function SideBar() {
   const { data } = useSession();
   const pathname = usePathname();
+  const router = useRouter()
 
   return (
-    <nav className="bg-white gap-4 w-1/4 flex flex-col justify-between px-10 border-r border-border py-5 pb-10">
+    <nav className="bg-white gap-4 w-full h-[100vh] sticky left-0 top-0 flex flex-col justify-between px-10 border-r border-border py-5 pb-10">
       <div className="block space-y-4">
         <div className="px-5">
           <Image
@@ -39,14 +40,14 @@ export default function SideBar() {
           <NavButton
             href="/home"
             isActive={pathname === "/home"}
-            icon={<HiHome className="text-2xl" />}
+            icon={pathname === "/home"?<HiHome className="text-2xl" />:<HiOutlineHome className="text-2xl"/>}
           >
             Home
           </NavButton>
           <NavButton
             href="/explore"
             isActive={pathname === "/explore"}
-            icon={<AiOutlineSearch className="text-2xl" />}
+            icon={<HiSearch className="text-2xl" />}
           >
             Explore
           </NavButton>
@@ -66,10 +67,10 @@ export default function SideBar() {
           </NavButton>
         </ul>
       </div>
-      <Button className="rounded-full gap-2">
-        <HiPlus className="text-2xl" />
+        
+      <NavButton href={"/new-post"} icon={<HiPlus className="text-2xl" />} className="bg-primary hover:bg-primary justify-center">
         <span>New Post</span>
-      </Button>
+      </NavButton>
       <div className="block space-y-3">
         <NavButton
           icon={

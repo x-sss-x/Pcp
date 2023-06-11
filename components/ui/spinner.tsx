@@ -5,16 +5,6 @@ import { cn } from "@/lib/utils";
 
 const spinnerVariants = cva(
   "h-7 w-7 border-[4px] rounded-full border-slate-200 border-r-primary animate-spin duration-500"
-  //   {
-  //     variants: {
-  //       isActive: {
-  //         true: "font-semibold text-slate-800",
-  //       },
-  //     },
-  //     defaultVariants: {
-  //       isActive: false,
-  //     },
-  //   }
 );
 
 interface NavButtonProps extends VariantProps<typeof spinnerVariants> {
