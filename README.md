@@ -31,9 +31,14 @@ above values are available when run
 ```bash
 npx supbase status
 ```
+
 To get `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` watch this vedio
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tjCxuDh5e9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!-- blankLine -->
+<figure class="video_container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tjCxuDh5e9I" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+</figure>
+<!-- blankLine -->
 
 > 4. Create `.env.local` file in root project directory
 
