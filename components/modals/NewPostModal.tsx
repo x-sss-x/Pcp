@@ -52,7 +52,7 @@ export default function NewPostModal() {
       }}
       open={true}
     >
-      <DialogContent className="absolute bottom-20">
+      <DialogContent className="absolute top-10">
         <DialogHeader>
           <DialogTitle>New Post</DialogTitle>
           <DialogDescription>
