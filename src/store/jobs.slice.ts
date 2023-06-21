@@ -29,6 +29,29 @@ export const fetchIntialJobs = createAsyncThunk<
   }
 );
 
+export const fetchMyJobs = createAsyncThunk<
+  any,
+  string,
+  {
+    rejectValue: any;
+  }
+>(
+  "/jobs/fetchMyJobs",
+  async (_payload, { fulfillWithValue, rejectWithValue }) => {
+    try {
+      const response = await SupaClient.from("Jobs")
+        .select("*,User(name,username,image,email)")
+        .eq("userId", _payload)
+        .order("createdAt", { ascending: false })
+        .limit(10);
+      const data = response.data;
+      return fulfillWithValue(data);
+    } catch (e: any) {
+      return rejectWithValue(e.message);
+    }
+  }
+);
+
 export type JobsProps = Database["public"]["Tables"]["Jobs"]["Row"] & {
   User: Pick<
     Database["public"]["Tables"]["User"]["Row"],
@@ -55,7 +78,13 @@ export const JobsSlice = createSlice({
       })
       .addCase(fetchIntialJobs.fulfilled, (state, action) => {
         state.isLoading = false;
-        // console.log(action.payload)
+        action.payload && JobsAdapter.addMany(state, action.payload);
+      })
+      .addCase(fetchMyJobs.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchMyJobs.fulfilled, (state, action) => {
+        state.isLoading = false;
         action.payload && JobsAdapter.addMany(state, action.payload);
       });
   },
@@ -64,4 +93,3 @@ export const JobsSlice = createSlice({
 export const JobsSelector = JobsAdapter.getSelectors<RootState>(
   (state) => state.jobs
 );
-

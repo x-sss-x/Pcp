@@ -1,7 +1,7 @@
 import { fakerEN_IN as faker } from "@faker-js/faker";
 import { PrismaClient } from "@prisma/client";
 import _ from "lodash";
-import {hash} from "bcrypt"
+import { hash } from "bcrypt";
 
 const prisma = new PrismaClient();
 
@@ -12,9 +12,9 @@ const main = async () => {
   await prisma.like.deleteMany();
   await prisma.post.deleteMany();
   await prisma.user.deleteMany();
-  const hashedPassword = await hash("test1234",12);
+  const hashedPassword = await hash("test1234", 12);
   //creating users and their posts
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 20; i++) {
     await prisma.user.create({
       data: {
         username: faker.internet.userName(),
@@ -23,7 +23,8 @@ const main = async () => {
         bio: faker.lorem.words(10),
         password: hashedPassword,
         name: faker.person.fullName(),
-        image:faker.image.avatar(),
+        image: faker.image.avatarGitHub(),
+        role: faker.helpers.arrayElement(["HANDICAPP", "USER", "ORG"]),
         Post: {
           createMany: {
             data: [
@@ -52,7 +53,11 @@ const main = async () => {
 
   //create comments
   const posts = await prisma.post.findMany();
-  const users = await prisma.user.findMany();
+  const users = await prisma.user.findMany({
+    where: {
+      role: "HANDICAPP",
+    },
+  });
 
   await Promise.all(
     posts.map(async (post) => {
