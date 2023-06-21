@@ -39,7 +39,7 @@
     "next-auth": "^4.22.1",
     "next-redux-wrapper": "^8.1.0",
     "postcss": "8.4.24",
-    "prisma": "^4.15.0",
+    "prisma": "^4.16.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.3",
