@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
-import { signIn} from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
@@ -113,7 +113,12 @@ export function LoginForm() {
         <AiOutlineGoogle className="text-3xl text-primary" />
         <span className="text-md">Signin With Google</span>
       </Button> */}
-      <span className="text-sm mt-3 w-full block text-center">don't have account ? <Link href="/sign-up" className="text-blue-500 hover:underline">signup</Link></span>
+      <span className="text-sm mt-3 w-full block text-center">
+        {"don't have account ?"}
+        <Link href="/sign-up" className="text-blue-500 hover:underline">
+          signup
+        </Link>
+      </span>
     </div>
   );
 }
