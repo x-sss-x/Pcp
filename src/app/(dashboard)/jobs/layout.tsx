@@ -4,10 +4,6 @@ import { useAppDispatch} from "@/hooks";
 import { fetchIntialJobs } from "@/store/jobs.slice";
 import { useCallback } from "react";
 
-export const metadata = {
-  title: "Handic App",
-  description: "",
-};
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const dispatch = useAppDispatch();

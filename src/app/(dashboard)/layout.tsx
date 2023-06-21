@@ -5,10 +5,6 @@ import { redirect } from "next/navigation";
 import SideBar from "@/components/sub-components/SideBar";
 import RightBar from "@/components/sub-components/RightBar";
 
-export const metadata = {
-  title: "Handic App",
-  description: "",
-};
 
 export default async function RootLayout(props: {
   children: React.ReactNode;

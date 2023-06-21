@@ -8,10 +8,6 @@ const inter = Poppins({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Handic App",
-  description: "",
-};
 
 export default async function RootLayout(props: {
   children: React.ReactNode;

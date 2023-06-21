@@ -1,13 +1,8 @@
 "use client";
 import Header from "@/components/sub-components/Header";
-import { useAppDispatch, useAppSelector } from "@/hooks";
-import { fetchIntialPosts, PostSelector } from "@/store/post.slice";
+import { useAppDispatch } from "@/hooks";
+import { fetchIntialPosts } from "@/store/post.slice";
 import { useCallback } from "react";
-
-export const metadata = {
-  title: "Handic App",
-  description: "",
-};
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   const dispatch = useAppDispatch();
