@@ -18,12 +18,12 @@ export default async function RootLayout(props: {
   return (
     <div
       className={"w-full grid h-full"}
-      style={{ gridTemplateColumns: "1fr 2fr 1fr", overflowY: "scroll" }}
+      style={{ gridTemplateColumns: "1fr 3.5fr", overflowY: "scroll" }}
     >
       <SideBar />
       {props.modals}
       <main className="bg-slate-800 w-full h-full">{props.children}</main>
-      <RightBar>{props.rightBarSlot}</RightBar>
+      {/* <RightBar>{props.rightBarSlot}</RightBar> */}
     </div>
   );
 }

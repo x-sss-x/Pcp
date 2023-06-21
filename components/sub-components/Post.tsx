@@ -27,7 +27,7 @@ export default function Post({ props }: { props: PostProps }) {
       }
     >
       {/* header */}
-      <div className="py-2 px-6">
+      <div className="py-2 px-40">
         <div className="flex gap-3">
           <Avatar className="border border-slate-300">
             <AvatarImage src={User?.image ? User?.image : ""} />
@@ -46,7 +46,7 @@ export default function Post({ props }: { props: PostProps }) {
       </div>
 
       {/* content area */}
-      <div className="px-6 flex flex-col items-center">
+      <div className="px-40 flex flex-col items-center">
         <p className="py-3 text-black font-normal px-7 w-full text-left tracking-wider text-sm leading-6">
           {content}
         </p>
@@ -66,9 +66,9 @@ export default function Post({ props }: { props: PostProps }) {
       </div>
 
       {/* footer */}
-      <div className="px-14 py-3 flex space-x-16">
+      <div className="px-56 py-3 flex space-x-16">
         <LikeButton userId={user?.id!} postId={id} />
-        <div className="flex items-center justify-center gap-1 w-fit text-slate-600">
+        {/* <div className="flex items-center justify-center gap-1 w-fit text-slate-600">
           <Button
             variant={"ghost"}
             className="rounded-full p-1 h-10 w-10 hover:bg-blue-100 hover:text-blue-500"
@@ -76,7 +76,7 @@ export default function Post({ props }: { props: PostProps }) {
             <HiOutlineChatBubbleBottomCenter className="text-xl" />
           </Button>
           <span className="text-sm">0</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
