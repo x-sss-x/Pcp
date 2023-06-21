@@ -100,7 +100,7 @@ export function LoginForm() {
           </Button>
         </form>
       </Form>
-      <Button
+      {/* <Button
         onClick={() =>
           signIn("google").catch((e) => {
             console.log(e);
@@ -112,7 +112,7 @@ export function LoginForm() {
       >
         <AiOutlineGoogle className="text-3xl text-primary" />
         <span className="text-md">Signin With Google</span>
-      </Button>
+      </Button> */}
       <span className="text-sm mt-3 w-full block text-center">don't have account ? <Link href="/sign-up" className="text-blue-500 hover:underline">signup</Link></span>
     </div>
   );
