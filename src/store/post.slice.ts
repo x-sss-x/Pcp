@@ -18,7 +18,7 @@ export const fetchIntialPosts = createAsyncThunk<
   async (payload, { fulfillWithValue, rejectWithValue }) => {
     try {
       const response = await SupaClient.from("Post")
-        .select("*,User(name,username,image),LikeDetails(count),Like(userId)")
+        .select("*,User(name,username,image),Like(userId)")
         .order("createdAt", { ascending: false })
         .limit(10);
       console.log(payload);
@@ -34,42 +34,23 @@ export const fetchIntialPosts = createAsyncThunk<
   }
 );
 
-
 export type PostProps = Database["public"]["Tables"]["Post"]["Row"] & {
-  User: Database["public"]["Tables"]["User"]["Row"];
-  LikeDetails: { count: number }[];
-  isLiked?: boolean;
-  Like: string[];
+  User: Pick<
+    Database["public"]["Tables"]["User"]["Row"],
+    "username" | "image" | "name"
+  >;
 };
 
 const PostAdapter = createEntityAdapter<PostProps>({
   selectId: (post) => post.id,
+  sortComparer: (a, b) =>
+    new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
 });
 
 export const PostSlice = createSlice({
   name: "post",
   reducers: {
-    addOneLike(state, action) {
-      const doneLike = [
-        ...state.entities[action.payload.postId]!.Like,
-        action.payload.userId,
-      ];
-      return PostAdapter.updateOne(state, {
-        id: action.payload.postId,
-        changes: { Like: doneLike },
-      });
-    },
-    removeOneLike(state, action) {
-      const doneLike = [
-        ...state.entities[action.payload.postId]!.Like.filter(
-          (likee) => likee !== action.payload.userId
-        ),
-      ];
-      return PostAdapter.updateOne(state, {
-        id: action.payload.postId,
-        changes: { Like: doneLike },
-      });
-    },
+    addOnePost: PostAdapter.upsertOne,
   },
   initialState: PostAdapter.getInitialState<{ isLoading: boolean }>({
     isLoading: false,
@@ -91,4 +72,4 @@ export const PostSelector = PostAdapter.getSelectors<RootState>(
   (state) => state.post
 );
 
-export const { addOneLike, removeOneLike } = PostSlice.actions;
+export const { addOnePost } = PostSlice.actions;

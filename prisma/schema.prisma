@@ -36,6 +36,7 @@ model Session {
 
 model User {
   id            String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  role          Role        @default(USER)
   name          String?
   username      String?
   password      String?
@@ -50,9 +51,16 @@ model User {
   Post          Post[]
   SavedPost     SavedPost[]
   sessions      Session[]
+  Jobs          Jobs[]
 
   @@index([id])
   @@map("User")
+}
+
+enum Role {
+  HANDICAPP
+  ORG
+  USER
 }
 
 model VerificationToken {
@@ -64,16 +72,15 @@ model VerificationToken {
 }
 
 model Post {
-  id          String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  content     String?
-  media_url   String
-  userId      String        @db.Uuid
-  createdAt   DateTime      @default(now()) @db.Timestamptz(6)
-  comments    Comment[]
-  Like        Like[]
-  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  SavedPost   SavedPost[]
-  LikeDetails LikeDetails[]
+  id        String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  content   String?
+  media_url String
+  userId    String      @db.Uuid
+  createdAt DateTime    @default(now()) @db.Timestamptz(6)
+  comments  Comment[]
+  Like      Like[]
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  SavedPost SavedPost[]
 }
 
 model Comment {
@@ -103,11 +110,15 @@ model SavedPost {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-view LikeDetails {
-  id     String  @id @db.Uuid
-  postId String  @db.Uuid
-  post   Post    @relation(fields: [postId], references: [id])
-  count  BigInt?
-
-  @@unique([id])
+model Jobs {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title         String   @db.Text
+  description   String   @db.Text
+  qualification String   @db.Text
+  experience    String   @db.Text
+  salary        Int      @default(0)
+  location      String
+  createdAt     DateTime @default(now()) @db.Timestamptz(6)
+  User          User?    @relation(fields: [userId], references: [id])
+  userId        String?  @db.Uuid
 }

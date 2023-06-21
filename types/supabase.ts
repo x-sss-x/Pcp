@@ -101,6 +101,41 @@ export interface Database {
           userId?: string
         }
       }
+      Jobs: {
+        Row: {
+          createdAt: string
+          description: string
+          experience: string
+          id: string
+          location: string
+          qualification: string
+          salary: number
+          title: string
+          userId: string | null
+        }
+        Insert: {
+          createdAt?: string
+          description: string
+          experience: string
+          id?: string
+          location: string
+          qualification: string
+          salary?: number
+          title: string
+          userId?: string | null
+        }
+        Update: {
+          createdAt?: string
+          description?: string
+          experience?: string
+          id?: string
+          location?: string
+          qualification?: string
+          salary?: number
+          title?: string
+          userId?: string | null
+        }
+      }
       Like: {
         Row: {
           id: string
@@ -191,6 +226,7 @@ export interface Database {
           image: string | null
           name: string | null
           password: string | null
+          role: Database["public"]["Enums"]["Role"]
           username: string | null
         }
         Insert: {
@@ -202,6 +238,7 @@ export interface Database {
           image?: string | null
           name?: string | null
           password?: string | null
+          role?: Database["public"]["Enums"]["Role"]
           username?: string | null
         }
         Update: {
@@ -213,6 +250,7 @@ export interface Database {
           image?: string | null
           name?: string | null
           password?: string | null
+          role?: Database["public"]["Enums"]["Role"]
           username?: string | null
         }
       }
@@ -235,19 +273,13 @@ export interface Database {
       }
     }
     Views: {
-      LikeDetails: {
-        Row: {
-          count: number | null
-          id: string | null
-          postId: string | null
-        }
-      }
+      [_ in never]: never
     }
     Functions: {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      Role: "HANDICAPP" | "ORG" | "USER"
     }
     CompositeTypes: {
       [_ in never]: never

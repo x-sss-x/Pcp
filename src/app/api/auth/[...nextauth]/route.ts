@@ -11,7 +11,7 @@ export const NextAuthOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
-      clientId:process.env.GOOGLE_CLIENT_ID!,
+      clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
     Credentials({
@@ -63,12 +63,24 @@ export const NextAuthOptions: AuthOptions = {
     session: async ({ session, token }) => {
       if (session?.user) {
         session.user.id = token.uid;
+        const user = await prisma.user.findUnique({ where: { id: token.uid } });
+        if (user?.role) session.user.role = user.role;
+        if (user?.username) session.user.username = user.username;
+        if (user?.bio) session.user.bio = user.bio;
+        if (user?.address) session.user.address = user.address;
       }
       return session;
     },
     jwt: async ({ user, token }) => {
       if (user) {
         token.uid = user.id;
+        const userRes = await prisma.user.findUnique({
+          where: { id: user.id },
+        });
+        if (userRes?.role) token.role = userRes.role;
+        if (userRes?.username) token.username = userRes.username;
+        if (userRes?.bio) token.bio = userRes.bio;
+        if (userRes?.address) token.username = userRes.address;
       }
       return token;
     },

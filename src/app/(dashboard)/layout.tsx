@@ -12,14 +12,12 @@ export const metadata = {
 
 export default async function RootLayout(props: {
   children: React.ReactNode;
-  modal: React.ReactNode;
+  modals: React.ReactNode;
   rightBarSlot: React.ReactNode;
 }) {
   const session = await getServerSession(NextAuthOptions);
 
   if (!session?.user) redirect("/sign-in");
-
-  console.log(props.modal);
 
   return (
     <div
@@ -27,7 +25,7 @@ export default async function RootLayout(props: {
       style={{ gridTemplateColumns: "1fr 2fr 1fr", overflowY: "scroll" }}
     >
       <SideBar />
-      {props.modal}
+      {props.modals}
       <main className="bg-slate-800 w-full h-full">{props.children}</main>
       <RightBar>{props.rightBarSlot}</RightBar>
     </div>

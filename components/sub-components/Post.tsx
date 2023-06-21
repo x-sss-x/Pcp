@@ -16,7 +16,7 @@ export default function Post({ props }: { props: PostProps }) {
   const user = useUser();
   const dispatch = useAppDispatch();
 
-  const { User, content, createdAt, media_url, Like, id } = props;
+  const { User, content, createdAt, media_url, id } = props;
 
   dispatch(fetchLike({ postId: id }));
 
@@ -51,7 +51,13 @@ export default function Post({ props }: { props: PostProps }) {
           {content}
         </p>
         <Image
-          src={media_url}
+          src={
+            media_url.startsWith("p/")
+              ? SupaClient.storage
+                  .from("posts")
+                  .getPublicUrl(media_url).data.publicUrl
+              : media_url
+          }
           alt={content ? content : "Post"}
           width={600}
           height={600}
@@ -61,7 +67,7 @@ export default function Post({ props }: { props: PostProps }) {
 
       {/* footer */}
       <div className="px-14 py-3 flex space-x-16">
-        <LikeButton userId={user?.id!} postId={id} Like={Like} />
+        <LikeButton userId={user?.id!} postId={id} />
         <div className="flex items-center justify-center gap-1 w-fit text-slate-600">
           <Button
             variant={"ghost"}
@@ -82,7 +88,6 @@ const LikeButton = ({
 }: {
   userId: string;
   postId: string;
-  Like: string[];
 }) => {
   const LikeIds = useAppSelector((state) =>
     LikeSelector.selectById(state, postId)
@@ -90,7 +95,9 @@ const LikeButton = ({
   const isLiked = LikeIds?.idList.includes(userId);
   const dispatch = useAppDispatch();
   const [isPresent, safeToRemove] = usePresence();
+  const [isPresentNumberAni, safeToRemoveNumberAni] = usePresence();
   const [scope, animate] = useAnimate();
+  const [numscope, animateNum] = useAnimate();
 
   async function onLike() {
     dispatch(postLike({ userId, postId }));
@@ -100,14 +107,19 @@ const LikeButton = ({
     async function onAnimate() {
       await animate(
         scope.current,
-        { scale: [1, 1.4,1] },
-        { duration: 0.2,bounce:10,bounceDamping:23,bounceStiffness:30}
+        { scale: [1, 1.4, 1] },
+        { duration: 0.2, bounce: 10, bounceDamping: 23, bounceStiffness: 30 }
       );
+      await animateNum(numscope.current, {
+        translateY: [isLiked ? 40 : -40, 0],
+        opacity: [0, 1],
+      });
     }
-    if (isPresent) {
+    if (isPresent || isPresentNumberAni) {
       onAnimate();
     } else {
       safeToRemove();
+      safeToRemoveNumberAni();
     }
   }, [isLiked]);
 
@@ -126,7 +138,11 @@ const LikeButton = ({
           )}
         </div>
       </Button>
-      <span className="text-sm">{LikeIds?.idList.length}</span>
+      {/* <div className="py-3 bg-red-700"> */}
+      <span className="text-sm w-fit h-fit" ref={numscope}>
+        {LikeIds?.idList.length}
+      </span>
+      {/* </div> */}
     </div>
   );
 };

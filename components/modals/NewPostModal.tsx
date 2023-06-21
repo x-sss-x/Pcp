@@ -21,29 +21,66 @@ import { Input } from "../ui/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Image from "next/image";
+import { SupaClient } from "@/utils/supabase";
+import { useSession } from "next-auth/react";
+import { useAppDispatch } from "@/hooks";
+import { addOnePost, fetchIntialPosts } from "@/store/post.slice";
+import { Spinner } from "../ui/spinner";
 
 const formSchema = z.object({
   content: z.string().trim().nonempty({
     message: "Enter some content for your post",
-  }),
-  media_url: z.string().trim().nonempty({
-    message: "Choose image typeof .jpg .png",
   }),
 });
 
 export default function NewPostModal() {
   const router = useRouter();
   const [error, setError] = useState<null | string>(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const [file, setFile] = useState<null | File>(null);
+  const [previewUrl, setPreviewUrl] = useState<null | string>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       content: "",
-      media_url: "",
     },
   });
+  const fileref = useRef<null | HTMLInputElement>(null);
+  const session = useSession();
+  const dispatch = useAppDispatch();
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {};
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsUploading(true);
+    try {
+      if (file && session.data?.user) {
+        const post = await SupaClient.from("Post")
+          .insert({
+            media_url: "",
+            userId: session.data?.user?.id,
+            content: values.content,
+          })
+          .select("id")
+          .single();
+
+        if (post.data) {
+          const posterResponse = await SupaClient.storage
+            .from("posts")
+            .upload(`/p/${post.data.id}`, file, { upsert: true });
+          const posterPath = posterResponse.data?.path;
+          await SupaClient.from("Post")
+            .update({
+              media_url: posterPath,
+            })
+            .eq("id", post.data.id);
+          router.back();
+          router.refresh();
+        }
+      }
+    } catch (e) {}
+    setIsUploading(false);
+  };
 
   return (
     <Dialog
@@ -78,18 +115,36 @@ export default function NewPostModal() {
                     </FormItem>
                   )}
                 />
-                <FormField
-                  control={form.control}
-                  name="media_url"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input type="file" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <div
+                  onClick={() => fileref.current?.click()}
+                  className="w-full h-[280px] relative overflow-hidden rounded-sm cursor-pointer"
+                >
+                  <Image
+                    alt="Production Poster"
+                    src={previewUrl ?? "/default.png"}
+                    fill
+                  />
+                </div>
+                <FormControl hidden>
+                  <Input
+                    hidden
+                    ref={(refInput) => (fileref.current = refInput)}
+                    type="file"
+                    onChange={(e) => {
+                      if (e?.target?.files?.[0]) {
+                        const reader = new FileReader();
+
+                        reader.readAsDataURL(e.target.files[0]);
+
+                        reader.onloadend = (e) => {
+                          setPreviewUrl(reader.result as string);
+                        };
+
+                        setFile(e.target.files[0]);
+                      }
+                    }}
+                  />
+                </FormControl>
                 <DialogFooter>
                   <Button
                     size={"lg"}
@@ -98,7 +153,13 @@ export default function NewPostModal() {
                   >
                     Cancel
                   </Button>
-                  <Button size={"lg"}>Post</Button>
+                  <Button
+                    disabled={!file || isUploading}
+                    variant={isUploading ? "secondary" : "default"}
+                    size={"lg"}
+                  >
+                    {isUploading ? <Spinner /> : "Post"}
+                  </Button>
                 </DialogFooter>
               </form>
             </Form>
