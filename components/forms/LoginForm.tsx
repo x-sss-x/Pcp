@@ -96,7 +96,7 @@ export function LoginForm() {
             className="w-full text-md"
             disabled={isLoading}
           >
-            {isLoading ? "Signing..." : "Sing in"}
+            {isLoading ? "Signing..." : "Sign in"}
           </Button>
         </form>
       </Form>
